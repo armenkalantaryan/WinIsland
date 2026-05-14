@@ -171,3 +171,11 @@ int y = 10; // Change this value (pixels from top)
 
 ## License
 This project demonstrates WinUI 3 capabilities for building modern Windows applications.
+## ⚠️ Current Issue (Help Needed!)
+The project builds and compiles flawlessly with zero errors and warnings (configured for `x64`, `Debug`, `Unpackaged` mode). However, upon launching, the application immediately terminates with **Exit Code 0 (0x0)** without rendering or displaying the `MainWindow`. 
+
+### Technical Details:
+- The execution flow passes through `App.xaml.cs` successfully.
+- Added `Microsoft.Windows.AppLifecycle.AppInstance.GetCurrent()` in the constructor, but it didn't bypass the silent collapse.
+- Attempted to wrap `MainWindow` initialization in a `try-catch` block inside `OnLaunched`, but no exceptions are caught. The process terminates before reaching the window rendering stage.
+- Developer Mode is active on the host OS.
