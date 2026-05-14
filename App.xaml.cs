@@ -44,19 +44,8 @@ namespace WinIsland
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            try
-            {
-                _window = new MainWindow();
-                _window.Activate();
-            }
-            catch (System.Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine("=================================");
-                System.Diagnostics.Debug.WriteLine($"ОШИБКА ИНИЦИАЛИЗАЦИИ: {ex.Message}");
-                System.Diagnostics.Debug.WriteLine($"ГДЕ УПАЛО: {ex.StackTrace}");
-                System.Diagnostics.Debug.WriteLine("=================================");
-            }
-
+            _window = new MainWindow();
+            _window.Activate();
         }
     }
 }
